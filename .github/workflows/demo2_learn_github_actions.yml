@@ -1,0 +1,25 @@
+name: learn_github_actions2
+on: workflow_dispatch
+env:
+    NAME: "PNL"
+
+jobs:
+    say_my_favorite_group:
+        runs-on: ubuntu-latest
+        env:
+            MEN: "Mec"
+        steps:
+            - name : Meilleur Groupe
+              run : echo " $MEN $NAME est le meilleur groupe"
+              env:
+                  DAY: "Samedi"
+            - name : Meilleur Groupe 2
+              run : echo " $MEN $DAY il y a $NAME qui fait un concert"
+    say_my_entreprise:
+        runs-on: ubuntu-latest
+        env:
+            ENTREPRISE: "SNCF"
+        steps:
+            - name : Meilleure Entreprise
+              run : echo " $ENTREPRISE est la meilleure entreprise"
+            
