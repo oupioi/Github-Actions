@@ -6,7 +6,7 @@ env:
 
 jobs:
   bonjour:
-    runs-on : ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: "Salut"
         if: ${{env.NAME != 'Max'}}
