@@ -1,0 +1,36 @@
+name: Upload Artifacts
+
+on: workflow_dispatch
+
+jobs:
+    upload:
+        name: Upload
+        runs-on: ubuntu-latest
+        steps:
+            # Creation du fichier 
+            - name: create file
+              run: echo "coucou" > test.txt
+            # Upload du fichier
+            - name: upload artifact
+                # On utilise l'action github qui permet de faire l'upload
+              uses: actions/upload-artifact@v3
+              with:
+                    # Nom du fichier
+                    name: test
+                    path: test.txt
+    download:
+        needs: upload
+        name: Download Artifacts
+        runs-on: ubuntu-latest
+        steps:
+            # Download du fichier
+            - name: download file
+                # On utilise l'action github qui permet de faire le download
+              uses: actions/download-artifact@v3
+              with:
+                    # Nom du fichier
+                    name: test
+                    path: test.txt
+            # Affichage du contenu du fichier
+            - name: read file
+              run: cat test.txt
