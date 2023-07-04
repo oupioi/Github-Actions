@@ -6,6 +6,7 @@ jobs:
   liste:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: true
       matrix:
         fruit: [pomme, banane, orange]
         noms: [Alexia, Bob, Raphael]
