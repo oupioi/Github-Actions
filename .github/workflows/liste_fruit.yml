@@ -1,0 +1,14 @@
+name: Liste Fruits
+
+on: workflow_dispatch
+
+jobs:
+  liste:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        fruit: [apple, banana, orange]
+        noms: [Alexia, Bob, Raphael]
+    steps:
+      - name: Manger
+        run: echo "${{ matrix.noms }} mange ${{ matrix.fruit }}"
