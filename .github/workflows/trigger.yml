@@ -1,0 +1,13 @@
+name: Trigger Workflow
+on: 
+    workflow_run:
+        workflows: ["Pull Request Merged "]
+        types:
+            - completed
+jobs:
+    ok:
+        runs-on: ubuntu-latest
+        steps:
+            - name: WorkFlow ok
+              run: echo "Workflows @ok"
+            
