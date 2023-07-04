@@ -1,0 +1,12 @@
+name: Pull Request Merged 
+on:
+    pull_request:
+        types: [closed]
+jobs:
+    PullRequestMerged:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - name: Pull Request
+              if: github.event.pull_request.merged == true
+              run: echo "la PR est mergée"
