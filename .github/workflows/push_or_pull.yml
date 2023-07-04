@@ -10,4 +10,4 @@ jobs:
         run: echo "C'est une pull request !"
       - name: "PUSH"
         if: github.event_name == 'push'
-        run: echo "C'est un push !
+        run: echo "C'est un push !"
